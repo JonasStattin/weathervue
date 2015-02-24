@@ -14,9 +14,11 @@ body {
   background-image: -o-linear-gradient(left top, #f7f4d6 0%, #add5e2 100%);
   background-image: linear-gradient(left top, #f7f4d6 0%, #add5e2 100%);
   text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 .header {
-  margin: 20px 0 40px 0;
+  margin: 0px 0 40px 0;
 }
 .header-logo {
   text-indent: 100%;
