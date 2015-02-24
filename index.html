@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WeatherVue</title>
+		<meta name="description" content="Weather app in Vue">
+		<meta name="author" content="Jonas Stattin @ Vinnovera">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Pacifico' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+
+		<header class="header">
+			<h1 class="header-logo">Vinnovera</h1>
+		</header>
+
+		<section id="searchBox" class="search-box">
+			<h2 class="search-box-header">How's the weather in...</h2>
+			<form class="search-box-form">
+				<label class="search-box-form-label">Location:</label>
+				<input class="search-box-form-location" type="text" v-model="location">
+				<button class="search-box-form-add"  v-on='click: onAddClick'>+</button>
+			</form>
+		</section>
+
+		<section class="location">
+			<ul id="locationList" class="location-list">
+				<li v-repeat="locations" class="location location-{{setColorByTemp(main.temp)}}">
+					<i class="location-icon location-icon-{{weather[0].icon}}"></i>
+					<span class="location-temp">{{Math.round(main.temp)}}<span class="location-temp-deg">&deg;C</span></span>
+					<span class="location-name">{{name}}</span>
+					<button class="location-remove" v-on='click: onDeleteClick'>Delete</button>
+				</li>
+			</ul>
+		</section>
+
+		<script src="js/vendor/vue.js"></script>
+		<script src="js/vendor/superagent.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,266 @@
+@import 'vendor/normalize.css';
+@import 'mixins';
+
+html {
+	height: 100%;
+	font-size: 14px;
+	font-family: 'Lato';
+	font-weight: 300;
+}
+
+body {
+	height: 100%;
+	background-linear-gradient: left top, #f7f4d6, 0%, #add5e2, 100%;
+	text-align: center;
+}
+
+.header {
+	margin: 20px 0 40px 0;
+
+	&-logo {
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('gfx/logo.svg') no-repeat;
+		background-size: 100%;
+		width: 230px;
+		height: 60px;
+		max-width: 100%;
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+.search-box {
+	width: 520px;
+	max-width: 100%;
+	height: 180px;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.6);
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+	overflow: hidden;
+
+	&-header {
+		font-family: 'Pacifico';
+		color: #4a4a4a;
+		font-size: 1.8rem;
+		margin-top: 32px;
+	}
+
+	&-form {
+		position: relative;
+		display: inline-block;
+		background: #ccc;
+		width: 400px;
+		height: 40px;
+		max-width: 100%;
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: 93%;
+			height: 100%;
+			z-index: -2;
+			box-shadow: 40px 40px 0px 40px rgba(150, 150, 150, 0.2);
+			transform: skew(50deg);
+			transform-origin: 100% 100%;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		&-location {
+			border: 0;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			padding-right: 42px;
+			padding-left: 76px;
+		}
+
+		&-label {
+			position: absolute;
+			font-weight: bold;
+			top: 11px;
+			left: 12px;
+		}
+
+		&-add {
+			position: absolute;
+			width: 32px;
+			height: 100%;
+			right: 10px;
+			top: 0px;
+			font-weight: bold;
+			color: #c7dd34;
+			font-size: 2.4rem;
+			background: none;
+			border: 0;
+			padding: 0;
+
+			&:active {
+				right: 9px;
+				top: 1px;
+			}
+
+			&:focus {
+				outline: 0;
+			}
+		}
+
+	}
+}
+
+.location {
+	.location-list {
+		list-style: none;
+		padding: 0;
+		margin-top: 20px;
+		width: inherit;
+
+		.location {
+			display: inline-block;
+			width: 280px;
+			max-width: 90%;
+			background: #fff;
+			margin: 0 10px 10px 0;
+			border-radius: 3px;
+			box-sizing: border-box;
+			padding: 10px;
+			text-align: left;
+			position: relative;
+			color: #fff;
+
+			&-hot {
+				background: #eb9861;
+			}
+
+			&-average {
+				background: #e3b162;
+			}
+
+			&-cold {
+				background: #86dbef;
+			}
+
+			&-icon {
+				display: block;
+				width: 86px;
+				height: 86px;
+				background-size: 100% 100%;
+				float: left;
+
+				&-01d {
+					background-image: url('gfx/2.svg');
+				}
+
+				&-01n {
+					background-image: url('gfx/3.svg');
+				}
+
+				&-02d {
+					background-image: url('gfx/8.svg');
+				}
+
+				&-02n {
+					background-image: url('gfx/9.svg');
+				}
+
+				&-03d {
+					background-image: url('gfx/14.svg');
+				}
+
+				&-03n {
+					background-image: url('gfx/14.svg');
+				}
+
+				&-04d {
+					background-image: url('gfx/25.svg');
+				}
+
+				&-04n {
+					background-image: url('gfx/25.svg');
+				}
+
+				&-09d {
+					background-image: url('gfx/18.svg');
+				}
+
+				&-09n {
+					background-image: url('gfx/18.svg');
+				}
+
+				&-10d {
+					background-image: url('gfx/17.svg');
+				}
+
+				&-10n {
+					background-image: url('gfx/17.svg');
+				}
+
+				&-11d {
+					background-image: url('gfx/16.svg');
+				}
+
+				&-11n {
+					background-image: url('gfx/16.svg');
+				}
+
+				&-13d {
+					background-image: url('gfx/23.svg');
+				}
+
+				&-13n {
+					background-image: url('gfx/23.svg');
+				}
+
+				&-50d {
+					background-image: url('gfx/10.svg');
+				}
+
+				&-50n {
+					background-image: url('gfx/11.svg');
+				}
+			}
+
+			&-remove {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				text-indent: 200%;
+				white-space: nowrap;
+				overflow: hidden;
+				background: url('gfx/close.png') no-repeat;
+				background-size: 100%;
+				width: 19px;
+				height: 19px;
+				border: 0;
+
+				&:active {
+					right: 9px;
+					top: 11px;
+				}
+			}
+
+			&-temp {
+				font-size: 4rem;
+				display: block;
+				text-align: center;
+
+				&-deg {
+					font-size: 1rem;
+					vertical-align: top;
+					line-height: 2.8rem;
+				}
+			}
+
+			&-name {
+				font-size: 1.2rem;
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
